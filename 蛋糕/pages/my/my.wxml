@@ -1,0 +1,10 @@
+<!--pages/my/my.wxml open-type="share"-->
+<view>
+  <button class="test" type='default' bindtap='test'>转发</button>
+  <button class='share' id="shareBtn" open-type="share" type="primary" hover-class="other-button-hover">
+        <!-- <image src='/pages/image/home_up.png'></image> -->
+        分享
+  </button>
+</view>
+
+

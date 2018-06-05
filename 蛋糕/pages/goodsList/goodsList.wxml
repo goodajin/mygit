@@ -1,0 +1,22 @@
+<view class='container'>
+
+  <view class='nav_top'>
+    <scroll-view  class='nav_top_scrollView' scroll-x="true">
+      <block wx:for="{{navTopItems}}" wx:key="key">
+        <view class="nav_top_items{{curNav == item.id ? '.active' : ''}}" bindtap='switchTopTab' data-index='{{index}}' data-id='{{item.id}}'>{{item.title}}</view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <view class='nav_bottom'>
+    <!-- <scroll-view class='nav_bottom_scrollView' scroll-y="true"> -->
+      <block wx:for="navBottomItems" wx:key="key">
+        <view class='nav_bottom_items'>
+          <image src='{{navBottomItems[index].img}}'></image>
+          <text class='goodsTitle'>{{navBottomItems[index].title}}</text>
+          <text class='goodsPrice'>{{navBottomItems[index].price}}</text>
+        </view>
+      </block>
+    <!-- </scroll-view> -->
+  </view>
+</view>

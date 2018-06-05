@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class='app'>
+<!--滚动视图模块  -->
+  <swiper class='swiperView' indicator-dots='{{adContents.indicatorDots}}' autoplay='{{adContents.autoplay}}' interval='{{adContents.interval}}' duration='{{adContents.duration}}' catchtap='onSwiperClick'>
+    <block wx:for="{{adContents.imgUrls}}" wx:key="key">
+      <swiper-item style='height:500px'>
+        <image src='{{item}}' class='adImage' data-postId='{{index}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 菜单模块  -->
+  <view class='menus'>
+    <block wx:for="{{menusContents.menusImg}}" wx:key="key">
+      <view class='menu' catchtap='onMenuClick'>
+        <image class="menuImg" src='{{item}}' data-postId='{{index}}'></image>
+        <p class='menuTitle'><text>{{menusContents.menusTitle[index]}}</text></p>
+      </view>
+    </block>
+  </view>
+
+  <!-- 商品展示  -->
+  <view class='goods' >
+    <block wx:for="{{goodsImgUrl}}" wx:key="key" >
+      <view>
+        <image class='goodsImg' src='{{item}}'></image>
+      </view>
+    </block>
+  </view>
+
+  <view class='goods_big'>
+    <block wx:for="{{goodsBigImgUrl}}" wx:key="key">
+      <view>
+        <image src='{{item}}'></image>
+      </view>
+    </block>
+  </view>
+
+</view>
