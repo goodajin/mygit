@@ -11,6 +11,10 @@ Page({
    */
   onLoad: function (options) {
 
+      console.log('11111111111111111');
+      console.log(options);
+      console.log(options.key);
+      console.log(options.key2);
   },
 
   /**

@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var network = require("../../utils/network.js")
 
 Page({
   data: {
@@ -40,12 +41,25 @@ Page({
   onMenuClick:function(e){
     console.log(e);
     console.log(e.target.dataset.postid);
+    //页面跳转传参
     wx.navigateTo({
-      url: '/pages/goodsDetail/goodsDetail',
+      url: '/pages/goodsDetail/goodsDetail?key=value&key2=value2',
     })
   },
-
   onLoad:function(){
-    
+    // 网络请求数据
+    /**
+      * url: 网络请求的连接
+      * params: 请求参数
+      * message: 显示信息
+      * success: 成功回调函数
+      * fail: 失败回调函数
+     */
+    network.httpRequest("","POST","params",function(res){
+      // 请求成功回调这里
+    },function(res){
+      //请求失败回调这里
+      console.log("这是一个失败测试！！！");
+    });
   }
 })
